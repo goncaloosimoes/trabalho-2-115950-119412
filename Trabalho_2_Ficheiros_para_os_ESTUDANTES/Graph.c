@@ -139,7 +139,19 @@ Graph* GraphCreateTranspose(const Graph* g) {
 
   // COMPLETE THE CODE
 
-  return NULL;
+  Graph* transposedGraph = GraphCreate(g->numVertices, g->isDigraph, g->isWeighted);
+  List* verticeList = g->verticesList;
+  int numVertices = ListGetSize(verticeList);
+
+    // para cada vértice
+    for (int i = 0; i < numVertices; i++) {
+      // lista de adjacências
+
+      // para cada vertice adjacente
+    }
+
+
+  return transposedGraph;
 }
 
 void GraphDestroy(Graph** p) {
