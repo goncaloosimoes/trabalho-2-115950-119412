@@ -138,19 +138,36 @@ Graph* GraphCreateTranspose(const Graph* g) {
   assert(g->isComplete == 0);
 
   // COMPLETE THE CODE
+  Graph* transposedGraph = GraphCreate(g->numVertices, 1, g->isWeighted);
 
-  Graph* transposedGraph = GraphCreate(g->numVertices, g->isDigraph, g->isWeighted);
   List* verticeList = g->verticesList;
-  int numVertices = ListGetSize(verticeList);
+  ListMoveToHead(verticeList); // mover o current node da lista para o início
 
-    // para cada vértice
-    for (int i = 0; i < numVertices; i++) {
-      // lista de adjacências
+  // para cada vértice
+  for (unsigned int i = 0; i < g->numVertices; ListMoveToNext(verticeList), i++) { 
 
-      // para cada vertice adjacente
-    }
+    struct _Vertex* v = ListGetCurrentItem(verticeList); // vértice
 
+    // lista de adjacências
+    List* edges = v->edgesList;
+    int edgesSize = ListGetSize(edges);
+    
+    if (!ListIsEmpty(edges)) {
 
+      ListMoveToHead(edges);
+      for (int j = 0; j < edgesSize; ListMoveToNext(edges), j++) {
+        
+        struct _Edge* e = ListGetCurrentItem(edges); // aresta
+
+        // inversão da aresta
+        unsigned int from = e->adjVertex; // passa a ser o vértice de saída
+        unsigned int to = i; // passa a ser o vértice de entrada
+
+        GraphAddEdge(transposedGraph, from, to);
+
+      }
+    } 
+  }
   return transposedGraph;
 }
 
