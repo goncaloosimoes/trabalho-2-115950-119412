@@ -320,8 +320,7 @@ unsigned int* GraphGetAdjacentsTo(const Graph* g, unsigned int v) {
   struct _Vertex* vPointer = ListGetCurrentItem(vertices);
   unsigned int numAdjVertices = vPointer->outDegree;
 
-  unsigned int* adjacent =
-      (unsigned int*)calloc(1 + numAdjVertices, sizeof(unsigned int));
+  unsigned int* adjacent = (unsigned int*)calloc(1 + numAdjVertices, sizeof(unsigned int));
 
   if (numAdjVertices > 0) {
     adjacent[0] = numAdjVertices;

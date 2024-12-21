@@ -18,10 +18,13 @@
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "Graph.h"
 #include "IntegersStack.h"
 #include "instrumentation.h"
+
+#define INFINITO 1000000
 
 struct _GraphBellmanFordAlg {
   unsigned int* marked;  // To mark vertices when reached for the first time
@@ -33,14 +36,12 @@ struct _GraphBellmanFordAlg {
   unsigned int startVertex;  // The root of the shortest-paths tree
 };
 
-GraphBellmanFordAlg* GraphBellmanFordAlgExecute(Graph* g,
-                                                unsigned int startVertex) {
+GraphBellmanFordAlg* GraphBellmanFordAlgExecute(Graph* g, unsigned int startVertex) {
   assert(g != NULL);
   assert(startVertex < GraphGetNumVertices(g));
   assert(GraphIsWeighted(g) == 0);
 
-  GraphBellmanFordAlg* result =
-      (GraphBellmanFordAlg*)malloc(sizeof(struct _GraphBellmanFordAlg));
+  GraphBellmanFordAlg* result = (GraphBellmanFordAlg*)malloc(sizeof(struct _GraphBellmanFordAlg));
   assert(result != NULL);
 
   // Given graph and start vertex for the shortest-paths
@@ -53,22 +54,42 @@ GraphBellmanFordAlg* GraphBellmanFordAlgExecute(Graph* g,
   // TO BE COMPLETED !!
   //
   // CREATE AND INITIALIZE
-  // result->marked
-  // result->distance
-  // result->predecessor
-  //
+  result->marked = (unsigned int*)malloc(numVertices*sizeof(unsigned int));
+  result->distance = (int*)malloc(numVertices*sizeof(int));
+  result->predecessor = (int*)malloc(numVertices*sizeof(int));
+  
+  assert(result->marked != NULL);
+  assert(result->distance != NULL);
+  assert(result->predecessor != NULL);
 
-  // Mark all vertices as not yet visited, i.e., ZERO
-  
-  // No vertex has (yet) a (valid) predecessor
-  
-  // No vertex has (yet) a (valid) distance to the start vertex
+  memset(result->marked, 0, numVertices*sizeof(int)); // Mark all vertices as not yet visited, i.e., ZERO
+  memset(result->predecessor, -1, numVertices*sizeof(int)); // No vertex has (yet) a (valid) predecessor
+  memset(result->distance, INFINITO, numVertices*sizeof(int)); // No vertex has (yet) a (valid) distance to the start vertex
+
+  // The distance to the start vertex is 0
+  result->distance[startVertex] = 0;
   
   // THE ALGORTIHM TO BUILD THE SHORTEST-PATHS TREE
-
   
+  for (unsigned int i = 0; i < numVertices-1; i++) {
+    for (unsigned int j = 1; j < numVertices; j++) {
+      if (result->distance[j] == INFINITO) continue; // Skips unreachable vertices
 
-  return NULL;
+      unsigned int* adjacents = GraphGetAdjacentsTo(g, j);
+      unsigned int numAdjacents = adjacents[0]; // número vértices adjacentes
+
+      for (unsigned int k = 1; k <= numAdjacents; k++) {
+        unsigned int v = adjacents[k];
+        if (result->distance[j] + 1 < result->distance[v]) {
+          result->distance[v] = result->distance[j]+1;
+          result->predecessor[v] = j;
+          result->marked[v] = 1; // Marca o vértice como alcançado
+        }
+      }
+      free(adjacents); // Liberta a memória dos vértices adjacentes
+    }
+  }
+  return result;
 }
 
 void GraphBellmanFordAlgDestroy(GraphBellmanFordAlg** p) {
