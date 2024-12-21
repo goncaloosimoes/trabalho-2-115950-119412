@@ -6,10 +6,10 @@
 // Graph - Using a list of adjacency lists representation
 //
 
-// Student Name :
-// Student Number :
-// Student Name :
-// Student Number :
+// Student Name : Gonçalo Simões
+// Student Number : 119412
+// Student Name : Gonçalo Silva
+// Student Number : 115950
 
 /*** COMPLETE THE GraphCreateTranspose FUNCTION ***/
 
@@ -146,7 +146,8 @@ Graph* GraphCreateTranspose(const Graph* g) {
   // para cada vértice
   for (unsigned int i = 0; i < g->numVertices; ListMoveToNext(verticeList), i++) { 
 
-    struct _Vertex* v = ListGetCurrentItem(verticeList); // vértice
+    // vértice
+    struct _Vertex* v = ListGetCurrentItem(verticeList);
 
     // lista de adjacências
     List* edges = v->edgesList;
@@ -156,14 +157,17 @@ Graph* GraphCreateTranspose(const Graph* g) {
 
       ListMoveToHead(edges);
       for (int j = 0; j < edgesSize; ListMoveToNext(edges), j++) {
-        
-        struct _Edge* e = ListGetCurrentItem(edges); // aresta
-
+        // aresta
+        struct _Edge* e = ListGetCurrentItem(edges); 
         // inversão da aresta
         unsigned int from = e->adjVertex; // passa a ser o vértice de saída
         unsigned int to = i; // passa a ser o vértice de entrada
-
-        GraphAddEdge(transposedGraph, from, to);
+        
+        if (g->isWeighted) {
+          GraphAddWeightedEdge(transposedGraph, from, to, e->weight);
+        } else {
+          GraphAddEdge(transposedGraph, from, to);
+        }
 
       }
     } 
