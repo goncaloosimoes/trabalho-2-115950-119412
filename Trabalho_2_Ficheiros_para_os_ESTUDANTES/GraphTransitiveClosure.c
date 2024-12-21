@@ -42,10 +42,11 @@ Graph* GraphComputeTransitiveClosure(Graph* g) {
 
     for (unsigned int v = 0; v < numVertices; v++){
         if (GraphBellmanFordAlgReached(bellmanFord, v)) {
+            // Se o vértice for alcançado adicionamos ao novo grafo
             GraphAddEdge(transitiveClosure, i, v);
         }
     }
-    GraphBellmanFordAlgDestroy(&bellmanFord);
+    GraphBellmanFordAlgDestroy(&bellmanFord); // Eliminar o grafo auxiliar
   }
   return transitiveClosure;
 }
