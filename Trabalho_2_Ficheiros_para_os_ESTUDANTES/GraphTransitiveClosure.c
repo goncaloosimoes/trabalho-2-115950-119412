@@ -33,5 +33,19 @@ Graph* GraphComputeTransitiveClosure(Graph* g) {
 
   // COMPLETE THE CODE
 
-  return NULL;
+  unsigned int numVertices = GraphGetNumVertices(g);
+  Graph* transitiveClosure = GraphCreate(numVertices, 1, 0); // Digrafo sem pesos
+
+  for (unsigned int i = 0; i < numVertices; i++) {
+
+    GraphBellmanFordAlg* bellmanFord = GraphBellmanFordAlgExecute(g, i); // Algoritmo Bellman-Ford para cada vértice
+
+    for (unsigned int v = 0; v < numVertices; v++){
+        if (GraphBellmanFordAlgReached(bellmanFord, v)) {
+            GraphAddEdge(transitiveClosure, i, v);
+        }
+    }
+    GraphBellmanFordAlgDestroy(&bellmanFord);
+  }
+  return transitiveClosure;
 }
