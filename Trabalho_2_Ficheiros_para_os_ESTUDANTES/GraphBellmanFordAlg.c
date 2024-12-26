@@ -76,17 +76,17 @@ GraphBellmanFordAlg* GraphBellmanFordAlgExecute(Graph* g, unsigned int startVert
   // THE ALGORTIHM TO BUILD THE SHORTEST-PATHS TREE
   
   for (unsigned int i = 0; i < numVertices-1; i++) {
-    for (unsigned int j = 1; j < numVertices; j++) {
-      if (result->distance[j] == INFINITO) continue; // Ingnora vértices não alcançáveis
+    for (unsigned int u = 1; u < numVertices; u++) {
+      if (result->distance[u] == INFINITO) continue; // Ingnora vértices não alcançáveis
 
-      unsigned int* adjacents = GraphGetAdjacentsTo(g, j);
+      unsigned int* adjacents = GraphGetAdjacentsTo(g, u);
       unsigned int numAdjacents = adjacents[0]; // número vértices adjacentes
 
       for (unsigned int k = 1; k <= numAdjacents; k++) {
         unsigned int v = adjacents[k];
-        if (result->distance[j] + 1 < result->distance[v]) {
-          result->distance[v] = result->distance[j]+1;
-          result->predecessor[v] = j;
+        if (result->distance[u] + 1 < result->distance[v]) {
+          result->distance[v] = result->distance[u]+1;
+          result->predecessor[v] = u;
           result->marked[v] = 1; // Marca o vértice como alcançado
         }
       }
