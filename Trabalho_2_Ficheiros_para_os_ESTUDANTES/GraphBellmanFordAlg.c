@@ -62,18 +62,22 @@ GraphBellmanFordAlg* GraphBellmanFordAlgExecute(Graph* g, unsigned int startVert
   assert(result->distance != NULL);
   assert(result->predecessor != NULL);
 
-  memset(result->marked, 0, numVertices*sizeof(int)); // Mark all vertices as not yet visited, i.e., ZERO
-  memset(result->predecessor, -1, numVertices*sizeof(int)); // No vertex has (yet) a (valid) predecessor
-  memset(result->distance, INFINITO, numVertices*sizeof(int)); // No vertex has (yet) a (valid) distance to the start vertex
+  // Inicialização das estruturas
+  for (unsigned int i = 0; i < numVertices; i++) {
+    result->marked[i] = 0;
+    result->predecessor[i] = -1;
+    result->distance[i] = INFINITO;
+  }
 
-  // The distance to the start vertex is 0
+  // A distância ao vértice inicial é 0
   result->distance[startVertex] = 0;
+  result->marked[startVertex] = 1;
   
   // THE ALGORTIHM TO BUILD THE SHORTEST-PATHS TREE
   
   for (unsigned int i = 0; i < numVertices-1; i++) {
     for (unsigned int j = 1; j < numVertices; j++) {
-      if (result->distance[j] == INFINITO) continue; // Skips unreachable vertices
+      if (result->distance[j] == INFINITO) continue; // Ingnora vértices não alcançáveis
 
       unsigned int* adjacents = GraphGetAdjacentsTo(g, j);
       unsigned int numAdjacents = adjacents[0]; // número vértices adjacentes

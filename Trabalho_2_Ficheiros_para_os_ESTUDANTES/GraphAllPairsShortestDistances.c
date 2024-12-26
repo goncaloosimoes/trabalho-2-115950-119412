@@ -42,12 +42,17 @@ GraphAllPairsShortestDistances* GraphAllPairsShortestDistancesExecute(Graph* g) 
   unsigned int numVertices = GraphGetNumVertices(g);
   
   GraphAllPairsShortestDistances* result = (GraphAllPairsShortestDistances*)malloc(sizeof(struct _GraphAllPairsShortestDistances));
+  assert(result != NULL);
+
   result->graph = g;
 
   // Alocar memória para a matriz 2D
   result->distance = (int**)malloc(numVertices*sizeof(int*));
+  assert(result->distance != NULL);
+
   for (unsigned int i = 0; i < numVertices; i++) {
-    result->distance[i] = (int*)malloc(numVertices*sizeof(int*));
+    result->distance[i] = (int*)malloc(numVertices*sizeof(int));
+    assert(result->distance[i] != NULL);
   }
 
   // Inicializar a matriz
@@ -62,8 +67,10 @@ GraphAllPairsShortestDistances* GraphAllPairsShortestDistancesExecute(Graph* g) 
     GraphBellmanFordAlg* bellmanFordResult = GraphBellmanFordAlgExecute(g, src);
 
     for (unsigned int dest = 0; dest < numVertices; dest++) {
-        int dist = GraphBellmanFordAlgReached(bellmanFordResult, dest);
-        result->distance[src][dest] = (dist == INFINITO) ? INDEFINITE : dist;
+        int dist = GraphBellmanFordAlgDistance(bellmanFordResult, dest);
+        if (dist != INFINITO && dist >= 0) {
+          result->distance[src][dest] = dist;
+        }
     }
     
     // Libertar a memória usada pelo resultado de Bellman-Ford
