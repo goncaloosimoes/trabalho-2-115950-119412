@@ -46,7 +46,7 @@ static int* GraphComputeEccentricity(const GraphAllPairsShortestDistances* p, un
   int maxDistance;
   // Para cada vértice (linha)
   for (unsigned int v = 0; v < numVertices; v++) {    
-    maxDistance = 0; // Distância
+    maxDistance = -1; // vértices não alcançáveis
     for (unsigned int u = 0; u < numVertices; u++) {
       // Para cada vértice (coluna)
       int distance = GraphGetDistanceVW(p, v, u); // distância de v a u
@@ -67,11 +67,9 @@ static int GraphComputeRadius(int* eccentricityValues, unsigned int numVertices)
   
   int radius = INFINITE;
   for (unsigned int v = 0; v < numVertices; v++) {
-    int eccentricityVal = eccentricityValues[v];
-    if (eccentricityVal != 0) {
-      if (eccentricityVal < radius) {
-        radius = eccentricityVal;
-      }
+    int eccentricity = eccentricityValues[v];
+    if (eccentricity != -1 && eccentricity < radius) {
+      radius = eccentricity;
     }
   }
   return radius == INFINITE ? -1 : radius;
@@ -84,9 +82,9 @@ static int GraphComputeDiameter(int* eccentricityValues, unsigned int numVertice
   int diameter = -1;
 
   for (unsigned int v = 0; v < numVertices; v++) {
-    int eccentricityVal = eccentricityValues[v];
-    if (eccentricityVal != 0 && eccentricityVal > diameter) {
-      diameter = eccentricityVal;
+    int eccentricity = eccentricityValues[v];
+    if (eccentricity != -1 && eccentricity > diameter) {
+      diameter = eccentricity;
     }
   }
   return diameter;
@@ -95,6 +93,13 @@ static int GraphComputeDiameter(int* eccentricityValues, unsigned int numVertice
 // Função para calcular so vértices centrais de um grafo
 static unsigned int* GraphComputeCentralVertices(int* eccentricityValues, int radius, unsigned int numVertices) {
   assert(eccentricityValues != NULL);
+
+  if (radius == -1) {
+    unsigned int* emptyArr = (unsigned int*)malloc(sizeof(unsigned int));
+    assert(emptyArr != NULL);
+    emptyArr[0] = 0; // não há vértices centrais
+    return emptyArr;
+  }
 
   unsigned int numCentralVertices = 0;
 
@@ -252,7 +257,7 @@ void GraphEccentricityMeasuresPrint(const GraphEccentricityMeasures* p) {
   else {
     printf("Central Vertices: NULL");
   }
-  printf("\n");
+  printf("\n\n");
 
   free(centralVertices);
 }

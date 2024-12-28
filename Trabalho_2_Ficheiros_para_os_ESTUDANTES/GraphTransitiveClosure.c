@@ -41,7 +41,7 @@ Graph* GraphComputeTransitiveClosure(Graph* g) {
     GraphBellmanFordAlg* bellmanFord = GraphBellmanFordAlgExecute(g, i); // Algoritmo Bellman-Ford para cada vértice
 
     for (unsigned int v = 0; v < numVertices; v++){
-        if (GraphBellmanFordAlgReached(bellmanFord, v)) {
+        if (i != v && GraphBellmanFordAlgReached(bellmanFord, v)) { // i != v porque não há lacetes
             // Se o vértice for alcançado adicionamos ao novo grafo
             GraphAddEdge(transitiveClosure, i, v);
         }
