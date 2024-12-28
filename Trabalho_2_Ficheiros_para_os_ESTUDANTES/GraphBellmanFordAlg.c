@@ -26,6 +26,17 @@
 
 #define INFINITO 1000000
 
+void TestInit() {
+  InstrCalibrate();
+  InstrName[0] = "memops";
+  InstrName[1] = "dist_comps";
+  InstrName[2] = "updates";
+}
+
+#define MEMOPS InstrCount[0]
+#define DIST_COMPS InstrCount[1]
+#define UPDATES InstrCount[2]
+
 struct _GraphBellmanFordAlg {
   unsigned int* marked;  // To mark vertices when reached for the first time
   int* distance;  // The number of edges on the path from the start vertex
@@ -84,14 +95,17 @@ GraphBellmanFordAlg* GraphBellmanFordAlgExecute(Graph* g, unsigned int startVert
 
       for (unsigned int k = 1; k <= numAdjacents; k++) {
         unsigned int v = adjacents[k];
+        DIST_COMPS++;
         if (result->distance[u] + 1 < result->distance[v]) {
           result->distance[v] = result->distance[u]+1;
           result->predecessor[v] = u;
           result->marked[v] = 1; // Marca o vértice como alcançado
+          UPDATES+=3;
         }
       }
       free(adjacents); // Liberta a memória dos vértices adjacentes
     }
+    MEMOPS+=8;
   }
   return result;
 }
