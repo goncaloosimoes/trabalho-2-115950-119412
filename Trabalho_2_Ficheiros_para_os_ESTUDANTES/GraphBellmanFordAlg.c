@@ -89,23 +89,25 @@ GraphBellmanFordAlg* GraphBellmanFordAlgExecute(Graph* g, unsigned int startVert
   for (unsigned int i = 0; i < numVertices-1; i++) {
     for (unsigned int u = 0; u < numVertices; u++) {
       if (result->distance[u] == INFINITO) continue; // Ingnora vértices não alcançáveis
-
+      
       unsigned int* adjacents = GraphGetAdjacentsTo(g, u);
       unsigned int numAdjacents = adjacents[0]; // número vértices adjacentes
-
+      MEMOPS += 3 + 3*numAdjacents;
+      MEMOPS+= 2;  
       for (unsigned int k = 1; k <= numAdjacents; k++) {
         unsigned int v = adjacents[k];
         DIST_COMPS++;
+        MEMOPS+=3;
         if (result->distance[u] + 1 < result->distance[v]) {
           result->distance[v] = result->distance[u]+1;
           result->predecessor[v] = u;
           result->marked[v] = 1; // Marca o vértice como alcançado
           UPDATES+=3;
+          MEMOPS+=4;
         }
       }
       free(adjacents); // Liberta a memória dos vértices adjacentes
     }
-    MEMOPS+=8;
   }
   return result;
 }
