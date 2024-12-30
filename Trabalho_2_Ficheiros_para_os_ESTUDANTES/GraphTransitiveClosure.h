@@ -11,6 +11,8 @@
 
 #include "Graph.h"
 
+void TestInit2();
+
 Graph* GraphComputeTransitiveClosure(Graph* g);
 
 #endif  // _GRAPH_TRANSITIVE_CLOSURE_

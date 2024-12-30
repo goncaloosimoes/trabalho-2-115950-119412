@@ -1,0 +1,984 @@
+# export INSTRCTU=3.010  # (To bypass calibration)
+=== Digrafo 0 ===
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 1
+  0;
+  1;
+  1 -> 4;
+  2;
+  2 -> 1;
+  3;
+  3 -> 1;
+  4;
+  4 -> 0;
+  5;
+  5 -> 1;
+}
+The shortest path tree rooted at 0
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  0
+  // Max Out-Degree = 0
+  0;
+  1;
+  2;
+  3;
+  4;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000013	       0.000004	             25	              0	              0	             15
+
+The shortest path tree rooted at 1
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  2
+  // Max Out-Degree = 1
+  0;
+  1;
+  1 -> 4;
+  2;
+  3;
+  4;
+  4 -> 0;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000010	       0.000003	            138	             10	              6	             53
+
+The shortest path tree rooted at 2
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  3
+  // Max Out-Degree = 1
+  0;
+  1;
+  1 -> 4;
+  2;
+  2 -> 1;
+  3;
+  4;
+  4 -> 0;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000008	       0.000003	            170	             13	              9	             63
+
+The shortest path tree rooted at 3
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  3
+  // Max Out-Degree = 1
+  0;
+  1;
+  1 -> 4;
+  2;
+  3;
+  3 -> 1;
+  4;
+  4 -> 0;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000008	       0.000003	            170	             13	              9	             63
+
+The shortest path tree rooted at 4
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  1
+  // Max Out-Degree = 1
+  0;
+  1;
+  2;
+  3;
+  4;
+  4 -> 0;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000007	       0.000002	             79	              5	              3	             33
+
+The shortest path tree rooted at 5
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  3
+  // Max Out-Degree = 1
+  0;
+  1;
+  1 -> 4;
+  2;
+  3;
+  4;
+  4 -> 0;
+  5;
+  5 -> 1;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000012	       0.000004	            170	             13	              9	             63
+
+=== Digrafo 1 ===
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges = 10
+  // Max Out-Degree = 4
+  0;
+  1;
+  1 -> 2;
+  1 -> 4;
+  2;
+  2 -> 1;
+  2 -> 3;
+  3;
+  3 -> 5;
+  4;
+  4 -> 1;
+  5;
+  5 -> 0;
+  5 -> 2;
+  5 -> 3;
+  5 -> 4;
+}
+The shortest path tree rooted at 0
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  0
+  // Max Out-Degree = 0
+  0;
+  1;
+  2;
+  3;
+  4;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000016	       0.000005	             25	              0	              0	             15
+
+The shortest path tree rooted at 1
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 2
+  0;
+  1;
+  1 -> 2;
+  1 -> 4;
+  2;
+  2 -> 3;
+  3;
+  3 -> 5;
+  4;
+  5;
+  5 -> 0;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000019	       0.000006	            465	             50	             15	            163
+
+The shortest path tree rooted at 2
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 2
+  0;
+  1;
+  1 -> 4;
+  2;
+  2 -> 1;
+  2 -> 3;
+  3;
+  3 -> 5;
+  4;
+  5;
+  5 -> 0;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000157	       0.000052	            441	             47	             18	            153
+
+The shortest path tree rooted at 3
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 3
+  0;
+  1;
+  2;
+  2 -> 1;
+  3;
+  3 -> 5;
+  4;
+  5;
+  5 -> 0;
+  5 -> 2;
+  5 -> 4;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000018	       0.000006	            403	             43	             15	            141
+
+The shortest path tree rooted at 4
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 1
+  0;
+  1;
+  1 -> 2;
+  2;
+  2 -> 3;
+  3;
+  3 -> 5;
+  4;
+  4 -> 1;
+  5;
+  5 -> 0;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000011	       0.000004	            386	             41	             15	            135
+
+The shortest path tree rooted at 5
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 4
+  0;
+  1;
+  2;
+  2 -> 1;
+  3;
+  4;
+  5;
+  5 -> 0;
+  5 -> 2;
+  5 -> 3;
+  5 -> 4;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000010	       0.000003	            392	             42	             15	            137
+
+=== Digrafo 2 ===
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges = 15
+  // Max Out-Degree = 4
+  0;
+  0 -> 2;
+  0 -> 3;
+  0 -> 5;
+  1;
+  1 -> 0;
+  1 -> 4;
+  1 -> 5;
+  2;
+  2 -> 0;
+  2 -> 1;
+  2 -> 3;
+  2 -> 5;
+  3;
+  3 -> 2;
+  3 -> 4;
+  3 -> 5;
+  4;
+  4 -> 0;
+  4 -> 3;
+  5;
+}
+The shortest path tree rooted at 0
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 3
+  0;
+  0 -> 2;
+  0 -> 3;
+  0 -> 5;
+  1;
+  2;
+  2 -> 1;
+  3;
+  3 -> 4;
+  4;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000014	       0.000004	            597	             72	             15	            207
+
+The shortest path tree rooted at 1
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 3
+  0;
+  0 -> 2;
+  1;
+  1 -> 0;
+  1 -> 4;
+  1 -> 5;
+  2;
+  3;
+  4;
+  4 -> 3;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000012	       0.000004	            545	             65	             15	            189
+
+The shortest path tree rooted at 2
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 4
+  0;
+  1;
+  2;
+  2 -> 0;
+  2 -> 1;
+  2 -> 3;
+  2 -> 5;
+  3;
+  3 -> 4;
+  4;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000011	       0.000004	            574	             69	             15	            199
+
+The shortest path tree rooted at 3
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 3
+  0;
+  1;
+  2;
+  2 -> 1;
+  3;
+  3 -> 2;
+  3 -> 4;
+  3 -> 5;
+  4;
+  4 -> 0;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000011	       0.000004	            522	             62	             15	            181
+
+The shortest path tree rooted at 4
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 2
+  0;
+  0 -> 2;
+  0 -> 5;
+  1;
+  2;
+  2 -> 1;
+  3;
+  4;
+  4 -> 0;
+  4 -> 3;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000011	       0.000003	            494	             59	             15	            171
+
+The shortest path tree rooted at 5
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  0
+  // Max Out-Degree = 0
+  0;
+  1;
+  2;
+  3;
+  4;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000032	       0.000011	             25	              0	              0	             15
+
+=== Digrafo 3 ===
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges = 20
+  // Max Out-Degree = 4
+  0;
+  0 -> 4;
+  0 -> 5;
+  1;
+  1 -> 2;
+  1 -> 4;
+  1 -> 5;
+  2;
+  2 -> 1;
+  2 -> 3;
+  2 -> 4;
+  2 -> 5;
+  3;
+  3 -> 0;
+  3 -> 1;
+  3 -> 4;
+  3 -> 5;
+  4;
+  4 -> 2;
+  4 -> 3;
+  4 -> 5;
+  5;
+  5 -> 1;
+  5 -> 2;
+  5 -> 3;
+  5 -> 4;
+}
+The shortest path tree rooted at 0
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 2
+  0;
+  0 -> 4;
+  0 -> 5;
+  1;
+  2;
+  3;
+  4;
+  4 -> 2;
+  4 -> 3;
+  5;
+  5 -> 1;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000018	       0.000006	            689	             89	             15	            237
+
+The shortest path tree rooted at 1
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 3
+  0;
+  1;
+  1 -> 2;
+  1 -> 4;
+  1 -> 5;
+  2;
+  2 -> 3;
+  3;
+  3 -> 0;
+  4;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000012	       0.000004	            753	             98	             15	            259
+
+The shortest path tree rooted at 2
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 4
+  0;
+  1;
+  2;
+  2 -> 1;
+  2 -> 3;
+  2 -> 4;
+  2 -> 5;
+  3;
+  3 -> 0;
+  4;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000011	       0.000004	            730	             95	             15	            251
+
+The shortest path tree rooted at 3
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 4
+  0;
+  1;
+  2;
+  3;
+  3 -> 0;
+  3 -> 1;
+  3 -> 4;
+  3 -> 5;
+  4;
+  4 -> 2;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000012	       0.000004	            701	             91	             15	            241
+
+The shortest path tree rooted at 4
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 3
+  0;
+  1;
+  2;
+  3;
+  3 -> 0;
+  4;
+  4 -> 2;
+  4 -> 3;
+  4 -> 5;
+  5;
+  5 -> 1;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000013	       0.000004	            655	             85	             15	            225
+
+The shortest path tree rooted at 5
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 4
+  0;
+  1;
+  2;
+  3;
+  3 -> 0;
+  4;
+  5;
+  5 -> 1;
+  5 -> 2;
+  5 -> 3;
+  5 -> 4;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000015	       0.000005	            632	             82	             15	            217
+
+=== Digrafo 4 ===
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges = 25
+  // Max Out-Degree = 5
+  0;
+  0 -> 1;
+  0 -> 2;
+  0 -> 3;
+  0 -> 5;
+  1;
+  1 -> 0;
+  1 -> 2;
+  1 -> 3;
+  2;
+  2 -> 0;
+  2 -> 1;
+  2 -> 3;
+  2 -> 4;
+  2 -> 5;
+  3;
+  3 -> 1;
+  3 -> 2;
+  3 -> 4;
+  3 -> 5;
+  4;
+  4 -> 0;
+  4 -> 2;
+  4 -> 3;
+  4 -> 5;
+  5;
+  5 -> 0;
+  5 -> 1;
+  5 -> 2;
+  5 -> 3;
+  5 -> 4;
+}
+The shortest path tree rooted at 0
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 4
+  0;
+  0 -> 1;
+  0 -> 2;
+  0 -> 3;
+  0 -> 5;
+  1;
+  2;
+  2 -> 4;
+  3;
+  4;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000025	       0.000008	            920	            125	             15	            315
+
+The shortest path tree rooted at 1
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 3
+  0;
+  1;
+  1 -> 0;
+  1 -> 2;
+  1 -> 3;
+  2;
+  2 -> 4;
+  2 -> 5;
+  3;
+  4;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000017	       0.000006	            891	            121	             15	            305
+
+The shortest path tree rooted at 2
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 5
+  0;
+  1;
+  2;
+  2 -> 0;
+  2 -> 1;
+  2 -> 3;
+  2 -> 4;
+  2 -> 5;
+  3;
+  4;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000016	       0.000005	            868	            118	             15	            297
+
+The shortest path tree rooted at 3
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 4
+  0;
+  1;
+  2;
+  3;
+  3 -> 1;
+  3 -> 2;
+  3 -> 4;
+  3 -> 5;
+  4;
+  4 -> 0;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000015	       0.000005	            833	            113	             15	            285
+
+The shortest path tree rooted at 4
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 4
+  0;
+  1;
+  2;
+  3;
+  4;
+  4 -> 0;
+  4 -> 2;
+  4 -> 3;
+  4 -> 5;
+  5;
+  5 -> 1;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000015	       0.000005	            804	            109	             15	            275
+
+The shortest path tree rooted at 5
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 5
+  0;
+  1;
+  2;
+  3;
+  4;
+  5;
+  5 -> 0;
+  5 -> 1;
+  5 -> 2;
+  5 -> 3;
+  5 -> 4;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000015	       0.000005	            775	            105	             15	            265
+
+=== Digrafo 5 ===
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges = 30
+  // Max Out-Degree = 5
+  0;
+  0 -> 1;
+  0 -> 2;
+  0 -> 3;
+  0 -> 4;
+  0 -> 5;
+  1;
+  1 -> 0;
+  1 -> 2;
+  1 -> 3;
+  1 -> 4;
+  1 -> 5;
+  2;
+  2 -> 0;
+  2 -> 1;
+  2 -> 3;
+  2 -> 4;
+  2 -> 5;
+  3;
+  3 -> 0;
+  3 -> 1;
+  3 -> 2;
+  3 -> 4;
+  3 -> 5;
+  4;
+  4 -> 0;
+  4 -> 1;
+  4 -> 2;
+  4 -> 3;
+  4 -> 5;
+  5;
+  5 -> 0;
+  5 -> 1;
+  5 -> 2;
+  5 -> 3;
+  5 -> 4;
+}
+The shortest path tree rooted at 0
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 5
+  0;
+  0 -> 1;
+  0 -> 2;
+  0 -> 3;
+  0 -> 4;
+  0 -> 5;
+  1;
+  2;
+  3;
+  4;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000017	       0.000006	           1070	            150	             15	            365
+
+The shortest path tree rooted at 1
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 5
+  0;
+  1;
+  1 -> 0;
+  1 -> 2;
+  1 -> 3;
+  1 -> 4;
+  1 -> 5;
+  2;
+  3;
+  4;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000016	       0.000005	           1035	            145	             15	            353
+
+The shortest path tree rooted at 2
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 5
+  0;
+  1;
+  2;
+  2 -> 0;
+  2 -> 1;
+  2 -> 3;
+  2 -> 4;
+  2 -> 5;
+  3;
+  4;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000015	       0.000005	           1000	            140	             15	            341
+
+The shortest path tree rooted at 3
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 5
+  0;
+  1;
+  2;
+  3;
+  3 -> 0;
+  3 -> 1;
+  3 -> 2;
+  3 -> 4;
+  3 -> 5;
+  4;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000017	       0.000006	            965	            135	             15	            329
+
+The shortest path tree rooted at 4
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 5
+  0;
+  1;
+  2;
+  3;
+  4;
+  4 -> 0;
+  4 -> 1;
+  4 -> 2;
+  4 -> 3;
+  4 -> 5;
+  5;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000016	       0.000005	            930	            130	             15	            317
+
+The shortest path tree rooted at 5
+// Paste in: https://dreampuf.github.io/GraphvizOnline
+digraph {
+  // Vertices =  6
+  // Edges =  5
+  // Max Out-Degree = 5
+  0;
+  1;
+  2;
+  3;
+  4;
+  5;
+  5 -> 0;
+  5 -> 1;
+  5 -> 2;
+  5 -> 3;
+  5 -> 4;
+}
+
+Metrics:
+#          time	        caltime	         memops	     dist_comps	        updates	          comps
+       0.000015	       0.000005	            895	            125	             15	            305
+

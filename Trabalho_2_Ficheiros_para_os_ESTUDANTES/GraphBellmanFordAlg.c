@@ -28,14 +28,16 @@
 
 void TestInit() {
   InstrCalibrate();
-  InstrName[0] = "memops";
+  InstrName[0] = "memops"; // 
   InstrName[1] = "dist_comps";
   InstrName[2] = "updates";
+  InstrName[6] = "comps";
 }
 
-#define MEMOPS InstrCount[0]
-#define DIST_COMPS InstrCount[1]
-#define UPDATES InstrCount[2]
+#define MEMOPS InstrCount[0] // número operações de acesso à memória
+#define DIST_COMPS InstrCount[1] // número de comparações entre distâncias
+#define UPDATES InstrCount[2] // número de atualizações dos arrays marked, distance e predecessor
+#define COMPS InstrCount[6] // número de comparações totais
 
 struct _GraphBellmanFordAlg {
   unsigned int* marked;  // To mark vertices when reached for the first time
@@ -87,16 +89,16 @@ GraphBellmanFordAlg* GraphBellmanFordAlgExecute(Graph* g, unsigned int startVert
   // THE ALGORTIHM TO BUILD THE SHORTEST-PATHS TREE
   
   for (unsigned int i = 0; i < numVertices-1; i++) {
+    COMPS++;
     for (unsigned int u = 0; u < numVertices; u++) {
-      if (result->distance[u] == INFINITO) continue; // Ingnora vértices não alcançáveis
-      
+      if (result->distance[u] == INFINITO) continue; // Ignora vértices não alcançáveis
+      COMPS+=2;
       unsigned int* adjacents = GraphGetAdjacentsTo(g, u);
       unsigned int numAdjacents = adjacents[0]; // número vértices adjacentes
-      MEMOPS += 3 + 3*numAdjacents;
-      MEMOPS+= 2;  
+      MEMOPS += 3 + 3*numAdjacents + 2;
       for (unsigned int k = 1; k <= numAdjacents; k++) {
         unsigned int v = adjacents[k];
-        DIST_COMPS++;
+        DIST_COMPS++; COMPS+=2;
         MEMOPS+=3;
         if (result->distance[u] + 1 < result->distance[v]) {
           result->distance[v] = result->distance[u]+1;

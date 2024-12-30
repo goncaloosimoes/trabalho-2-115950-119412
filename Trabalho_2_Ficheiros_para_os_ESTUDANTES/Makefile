@@ -27,6 +27,9 @@ TestTransitiveClosure: TestTransitiveClosure.o Graph.o GraphBellmanFordAlg.o \
 
 BellmanFordAnalysis: BellmanFordAnalysis.o Graph.o GraphBellmanFordAlg.o instrumentation.o SortedList.o IntegersStack.o
 
+TransitiveClosureAnalysis: TransitiveClosureAnalysis.o Graph.o GraphBellmanFordAlg.o instrumentation.o SortedList.o \
+IntegersStack.o GraphTransitiveClosure.o
+
 # Dependencies of source files
 
 Graph.o: Graph.c Graph.h SortedList.h instrumentation.h
