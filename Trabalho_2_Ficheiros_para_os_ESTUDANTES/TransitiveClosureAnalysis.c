@@ -31,9 +31,10 @@ void GenerateTree(Graph* g) {
 
 
 void TesteComArvores() {
-	unsigned int numVertices = 15;
+	unsigned int numVertices[] = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
 	for (int j = 0; j < 10; j++) {
-		Graph* g = GraphCreate(numVertices, 1, 0);
+    unsigned int nVertices = numVertices[j];
+		Graph* g = GraphCreate(nVertices, 1, 0);
 		GenerateTree(g);
 		printf("Tree %d\n", j);
 		GraphDisplayDOT(g);
